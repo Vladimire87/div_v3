@@ -1,0 +1,57 @@
+
+:root {
+  --light-gray: #F5F7F8;
+  --yellow: #F4CE14;
+  --dark-green: #495E57;
+  --charcoal: #45474B;
+}
+body {
+  background-color: var(--light-gray);
+  color: var(--charcoal);
+}
+.bg-primary {
+  background-color: var(--dark-green) !important;
+}
+.bg-secondary {
+  background-color: var(--yellow) !important;
+}
+.btn-primary {
+  background-color: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--charcoal);
+}
+.btn-primary:hover {
+  background-color: var(--dark-green);
+  border-color: var(--dark-green);
+  color: var(--light-gray);
+}
+.btn-outline-primary {
+  color: var(--dark-green);
+  border-color: var(--dark-green);
+}
+.btn-outline-primary:hover {
+  background-color: var(--dark-green);
+  border-color: var(--dark-green);
+  color: var(--light-gray);
+}
+.text-primary {
+  color: var(--dark-green) !important;
+}
+.navbar {
+  background-color: var(--charcoal) !important;
+}
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--yellow);
+}
+.card {
+  border: none;
+  transition: transform 0.3s;
+  background-color: var(--light-gray);
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.bg-gradient-primary {
+  background: linear-gradient(45deg, var(--dark-green), var(--charcoal));
+}
