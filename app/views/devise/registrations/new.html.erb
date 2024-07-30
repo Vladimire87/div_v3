@@ -1,0 +1,66 @@
+<div class="container my-5 flex-grow-1" w-tid="29">
+  <div class="row justify-content-center" w-tid="30">
+    <div class="col-md-6" w-tid="31">
+      <div class="card" w-tid="32">
+        <div class="card-body p-5" w-tid="33">
+          <h2 class="text-center mb-4 fw-bold" w-tid="34">Create Your Account</h2>
+          <form id="signUpForm" w-tid="35">
+            <div class="mb-3" w-tid="36">
+              <label for="fullName" class="form-label" w-tid="37">Full Name</label>
+              <input type="text" class="form-control" id="fullName" required="" w-tid="38">
+            </div>
+            <div class="mb-3" w-tid="39">
+              <label for="email" class="form-label" w-tid="40">Email Address</label>
+              <input type="email" class="form-control" id="email" required="" w-tid="41">
+            </div>
+            <div class="mb-3" w-tid="42">
+              <label for="password" class="form-label" w-tid="43">Password</label>
+              <input type="password" class="form-control" id="password" required="" w-tid="44">
+            </div>
+            <div class="mb-3" w-tid="45">
+              <label for="confirmPassword" class="form-label" w-tid="46">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" required="" w-tid="47">
+            </div>
+            <div class="mb-3 form-check" w-tid="48">
+              <input type="checkbox" class="form-check-input" id="termsAgreement" required="" w-tid="49">
+              <label class="form-check-label" for="termsAgreement" w-tid="50">I agree to the <a href="https://websim.ai/terms" w-tid="51">Terms of Service</a> and <a href="https://websim.ai/privacy" w-tid="52">Privacy Policy</a></label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 fw-bold" w-tid="53">Sign Up</button>
+          </form>
+          <hr class="my-4" w-tid="54">
+          <div class="text-center" w-tid="55">
+            <p w-tid="56">Or sign up with:</p>
+            <a href="https://websim.ai/auth/google_oauth2" class="btn btn-google w-100 mb-2 fw-bold" w-tid="57">
+              <i class="bi bi-google me-2" w-tid="58"></i> Sign up with Google
+            </a>
+          </div>
+          <div class="mt-4 text-center" w-tid="59">
+            <p w-tid="60">Already have an account? <a href="https://websim.ai/login" w-tid="61">Login</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+<%= render "devise/shared/links" %>
