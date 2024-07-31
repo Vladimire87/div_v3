@@ -50,7 +50,7 @@ body {
 .card {
   border: none;
   transition: transform 0.3s;
-  background-color: var(--light-gray);
+  /* background-color: var(--light-gray); */
 }
 /* .card:hover {
   transform: translateY(-5px);
@@ -77,3 +77,9 @@ body {
   border-color: var(--dark-green);
   box-shadow: 0 0 0 0.2rem rgba(73, 94, 87, 0.25);
 }
+
+/* .field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+} */

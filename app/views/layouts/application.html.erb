@@ -10,6 +10,12 @@
   </head>
   <body class="d-flex flex-column min-vh-100">
     <%= render 'shared/nav' %>
+    <% flash.each do |type, msg| %>
+      <div class="container mt-3 alert alert-info alert-warning alert-dismissible fade show" role="alert">
+        <%= msg %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>

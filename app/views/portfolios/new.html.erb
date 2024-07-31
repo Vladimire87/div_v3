@@ -1,0 +1,22 @@
+<div class="container py-4">
+  <h2 class="mb-4">Create New Portfolio</h2>
+  <div class="card">
+    <div class="card-header">
+      Portfolio Details
+    </div>
+    <div class="card-body">
+      <%= form_with model: @portfolio, local: true do |form| %>
+        <div class="mb-3">
+          <%= form.label :name, "Portfolio Name", class: "form-label" %>
+          <%= form.text_field :name, class: "form-control #{'is-invalid' if @portfolio.errors.any? }" %>
+          <% if @portfolio.errors.any? %>
+            <div class="invalid-feedback" <%= "style=display:block;" if @portfolio.errors.any?  %>>
+              Please choose Portfolio name.
+            </div>
+          <% end %>
+        </div>
+        <%= form.submit "Create Portfolio", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

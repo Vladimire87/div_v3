@@ -1,7 +1,7 @@
 <% if current_user.present?%>
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="<%= dashboard_index_path %>">
+      <a class="navbar-brand fw-bold" href="<%= root_path %>">
         <i class="bi bi-graph-up-arrow text-warning"></i> DividendTrack
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@
             <a class="nav-link" href="#features">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#pricing">Create Portfolio</a>
+            <%= link_to "Create Portfolio", new_portfolio_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#testimonials">Analysis</a>
