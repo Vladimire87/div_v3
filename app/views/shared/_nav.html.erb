@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#features">Dashboard</a>
+            <%= link_to "Dashboard", dashboard_index_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Create Portfolio", new_portfolio_path, class: "nav-link" %>

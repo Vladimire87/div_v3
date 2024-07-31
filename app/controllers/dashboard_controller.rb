@@ -4,6 +4,7 @@ class DashboardController < ApplicationController
   before_action :set_user
   def index
     ensure_portfolio
+    @portfolios = @user.portfolios
   end
 
   private

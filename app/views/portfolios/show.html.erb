@@ -1,0 +1,172 @@
+<div class="container py-4">
+  <div class="row mb-4">
+    <div class="col-12">
+      <h2 class="mb-4">Portfolio: <%= @portfolio.name %></h2>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="stat-card">
+        <h3>$125,750</h3>
+        <p>Total Value</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="stat-card">
+        <h3>4.2%</h3>
+        <p>Dividend Yield</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="stat-card">
+        <h3>$5,281</h3>
+        <p>Annual Dividend Income</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="stat-card">
+        <h3>+12.3%</h3>
+        <p>YTD Return</p>
+      </div>
+    </div>
+  </div>
+  <%# <div class="row mb-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <span>Projected Monthly Income</span>
+          <small class="text-muted">All values in USD</small>
+        </div>
+        <div class="card-body">
+          <div class="chart-container">
+            <canvas id="projectedIncomeChart" style="display: block; box-sizing: border-box; height: 150px; width: 1176px;" width="1176" height="150"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> %>
+  <div class="row mb-3">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+      <h3>Holdings</h3>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHoldingModal">
+        <i class="bi bi-plus-circle"></i> Add New Holding
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Company</th>
+                  <th>Shares</th>
+                  <th>Price</th>
+                  <th>Value</th>
+                  <th>Yield</th>
+                  <th>Sector</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AAPL</td>
+                  <td>Apple Inc.</td>
+                  <td>100</td>
+                  <td>$150.25</td>
+                  <td>$15,025</td>
+                  <td>0.6%</td>
+                  <td>Technology</td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-primary me-1">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger">Remove</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>MSFT</td>
+                  <td>Microsoft Corporation</td>
+                  <td>75</td>
+                  <td>$280.50</td>
+                  <td>$21,037.50</td>
+                  <td>0.9%</td>
+                  <td>Technology</td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-primary me-1">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger">Remove</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>JNJ</td>
+                  <td>Johnson &amp; Johnson</td>
+                  <td>50</td>
+                  <td>$165.75</td>
+                  <td>$8,287.50</td>
+                  <td>2.6%</td>
+                  <td>Healthcare</td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-primary me-1">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger">Remove</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PG</td>
+                  <td>Procter &amp; Gamble Co</td>
+                  <td>60</td>
+                  <td>$140.20</td>
+                  <td>$8,412</td>
+                  <td>2.4%</td>
+                  <td>Consumer Goods</td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-primary me-1">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger">Remove</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>VZ</td>
+                  <td>Verizon Communications Inc.</td>
+                  <td>100</td>
+                  <td>$55.30</td>
+                  <td>$5,530</td>
+                  <td>4.5%</td>
+                  <td>Telecommunications</td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-primary me-1">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger">Remove</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%# <div class="row mt-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          Recent Transactions
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Bought AAPL
+              <span class="badge bg-success rounded-pill">+10 shares</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Sold GE
+              <span class="badge bg-danger rounded-pill">-25 shares</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Dividend Received (JNJ)
+              <span class="badge bg-info rounded-pill">$45.50</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div> %>
+</div>
