@@ -1,0 +1,48 @@
+<div class="container py-4">
+  <h2 class="mb-4">Create New Portfolio</h2>
+  <div class="card">
+    <div class="card-header">
+      Portfolio Details
+    </div>
+    <div class="card-body">
+      <form id="createPortfolioForm">
+        <div class="mb-3">
+          <label for="portfolioName" class="form-label">Portfolio Name</label>
+          <input type="text" class="form-control" id="portfolioName" required="">
+        </div>
+        <div class="mb-3">
+          <label for="portfolioDescription" class="form-label">Description (Optional)</label>
+          <textarea class="form-control" id="portfolioDescription" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="investmentStrategy" class="form-label">Investment Strategy</label>
+          <select class="form-select" id="investmentStrategy" required="">
+            <option value="">Choose a strategy...</option>
+            <option value="dividendGrowth">Dividend Growth</option>
+            <option value="highYield">High Yield</option>
+            <option value="balancedIncome">Balanced Income</option>
+            <option value="valueInvesting">Value Investing</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="riskTolerance" class="form-label">Risk Tolerance</label>
+          <select class="form-select" id="riskTolerance" required="">
+            <option value="">Select risk level...</option>
+            <option value="conservative">Conservative</option>
+            <option value="moderate">Moderate</option>
+            <option value="aggressive">Aggressive</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="initialInvestment" class="form-label">Initial Investment Amount ($)</label>
+          <input type="number" class="form-control" id="initialInvestment" min="0" step="0.01" required="">
+        </div>
+        <div class="mb-3">
+          <label for="targetDividendYield" class="form-label">Target Dividend Yield (%)</label>
+          <input type="number" class="form-control" id="targetDividendYield" min="0" max="100" step="0.1" required="">
+        </div>
+        <button type="submit" class="btn btn-primary">Create Portfolio</button>
+      </form>
+    </div>
+  </div>
+</div>

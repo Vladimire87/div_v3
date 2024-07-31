@@ -66,3 +66,14 @@ body {
   background-color: #357ae8;
   color: white;
 }
+
+.card-header {
+  background-color: var(--yellow);
+  color: var(--charcoal);
+  font-weight: bold;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--dark-green);
+  box-shadow: 0 0 0 0.2rem rgba(73, 94, 87, 0.25);
+}
