@@ -28,6 +28,13 @@ body {
   border-color: var(--dark-green);
   color: var(--light-gray);
 }
+
+.btn-primary:active {
+  background-color: var(--dark-green) !important;
+  border-color: var(--dark-green) !important;
+  color: var(--light-gray) !important;
+}
+
 .btn-outline-primary {
   color: var(--dark-green);
   border-color: var(--dark-green);
