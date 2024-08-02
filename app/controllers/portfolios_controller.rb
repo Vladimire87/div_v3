@@ -3,11 +3,15 @@
 class PortfoliosController < ApplicationController
   before_action :set_user
   before_action :set_portfolio, only: %i[show]
+
   def new
     @portfolio = Portfolio.new
   end
 
-  def show; end
+  def show
+    @stocks = Stock.all
+    @positions = @portfolio.positions.includes(:stock)
+  end
 
   def create
     @portfolio = @user.portfolios.new portfolio_params
@@ -30,6 +34,10 @@ class PortfoliosController < ApplicationController
 
   def set_portfolio
     @portfolio = @user.portfolios.find(params[:id])
+  end
+
+  def set_stocks
+    @stocks = Stock.all
   end
 
 

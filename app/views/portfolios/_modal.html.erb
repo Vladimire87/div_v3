@@ -1,0 +1,34 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_with(model: [@portfolio, Position.new]) do |form| %>
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <%= form.collection_select :stock_id, @stocks, :id, :name, {}, class: "form-select" %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :quantity, "Quantity", class: "form-label" %>
+            <%= form.number_field :quantity, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :purchase_price, "Purchase Price", class: "form-label" %>
+            <%= form.number_field :purchase_price, step: 0.01, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :purchase_date, "Purchase Date", class: "form-label" %>
+            <%= form.date_field :purchase_date, class: "form-control" %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <%= form.submit "Add Position", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
