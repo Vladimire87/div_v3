@@ -4,7 +4,7 @@
     <td><%= position.stock.name %></td>
     <td><%= position.quantity %></td>
     <td><%= position.stock.current_price %></td>
-    <td>$15,025</td>
+    <td><%= number_to_currency(position.value.to_f, precision: 0) %></td>
     <td>0.6%</td>
     <td>Technology</td>
     <td>

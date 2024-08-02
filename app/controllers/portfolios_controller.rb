@@ -39,6 +39,4 @@ class PortfoliosController < ApplicationController
   def set_stocks
     @stocks = Stock.all
   end
-
-
 end
