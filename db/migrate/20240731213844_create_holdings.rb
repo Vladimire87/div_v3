@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-class CreatePositions < ActiveRecord::Migration[7.1]
+class CreateHoldings < ActiveRecord::Migration[7.1]
   def change
-    create_table :positions do |t|
+    create_table :holdings do |t|
       t.decimal :quantity
-      t.decimal :purchase_price
-      t.date :purchase_date
+      t.decimal :average_cost
       t.references :portfolio, null: false, foreign_key: true
       t.references :stock, null: false, foreign_key: true
 

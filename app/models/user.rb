@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   has_many :portfolios, dependent: :destroy
+  has_many :transactions, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

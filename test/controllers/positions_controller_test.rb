@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class PositionsControllerTest < ActionDispatch::IntegrationTest
+class holdingsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

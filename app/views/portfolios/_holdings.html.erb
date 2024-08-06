@@ -1,15 +1,19 @@
-<% @portfolio.positions.each do |position| %>
-  <tr>
-    <td><%= position.stock.symbol %></td>
-    <td><%= position.stock.name %></td>
-    <td><%= position.quantity %></td>
-    <td><%= position.stock.current_price %></td>
-    <td><%= number_to_currency(position.value.to_f, precision: 0) %></td>
-    <td>0.6%</td>
-    <td>Technology</td>
-    <td>
-      <button class="btn btn-sm btn-outline-primary me-1">Edit</button>
-      <button class="btn btn-sm btn-outline-danger">Remove</button>
+<% @portfolio.holdings.each do |holding| %>
+  <%= content_tag :tr, id: dom_id(holding) do %>
+    <td><%= holding.stock.symbol %>
     </td>
-  </tr>
+    <td><%= holding.stock.name %></td>
+    <td><%= holding.quantity %></td>
+    <td><%= number_to_currency(holding.average_cost) %></td>
+    <td><%= number_to_currency(holding.stock.current_price) %></td>
+    <td><%= number_to_currency(holding.market_value.to_f, precision: 0) %></td>
+    <td>0.6%</td>
+    <td><%= number_to_currency(150.to_f, precision: 0) %></td>
+    <td>
+      <%= link_to portfolio_transaction_path(@portfolio, holding.stock_id) do %>
+        <i class="bi bi-eye"></i>
+      <% end %>
+    </td>
+    <%# <%= link_to "Edit", edit_portfolio_holding_path(@portfolio, holding), data: {turbo_frame: "holding"},class: "btn btn-sm btn-outline-primary me-1" %>
+  <% end %>
 <% end %>

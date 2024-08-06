@@ -4,6 +4,7 @@
   --dark-green: #495E57;
   --charcoal: #45474B;
 }
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--light-gray);
@@ -19,14 +20,12 @@ body {
   background-color: var(--yellow) !important;
 }
 .btn-primary {
-  background-color: var(--yellow);
-  border-color: var(--yellow);
-  color: var(--charcoal);
-}
-.btn-primary:hover {
   background-color: var(--dark-green);
   border-color: var(--dark-green);
-  color: var(--light-gray);
+}
+.btn-primary:hover {
+  background-color: #3a4a45;
+  border-color: #3a4a45;
 }
 
 .btn-primary:active {
@@ -110,4 +109,8 @@ body {
 }
 .back-link:hover {
   text-decoration: underline;
+}
+
+.fs-6{
+  font-size: 0.9rem !important;
 }

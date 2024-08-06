@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :dashboard
   resources :portfolios do
-    resources :positions
+    resources :holdings
+    resources :transactions
   end
 end

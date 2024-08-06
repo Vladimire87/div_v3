@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class PositionTest < ActiveSupport::TestCase
+class HoldingTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

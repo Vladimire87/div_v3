@@ -1,0 +1,21 @@
+<%= form_with(model: [@portfolio, Holding.new]) do |form| %>
+  <div class="mb-3">
+    <%= form.collection_select :stock_id, @stocks, :id, :name, {}, class: "form-select" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :quantity, "Quantity", class: "form-label" %>
+    <%= form.number_field :quantity, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :purchase_price, "Purchase Price", class: "form-label" %>
+    <%= form.number_field :purchase_price, step: 0.01, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :purchase_date, "Purchase Date", class: "form-label" %>
+    <%= form.date_field :purchase_date, class: "form-control" %>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <%= form.submit "Add Holding", class: "btn btn-primary" %>
+  </div>
+<% end %>

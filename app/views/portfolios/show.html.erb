@@ -2,9 +2,9 @@
   <div class="row mb-4">
     <div class="col-12">
       <%= link_to  dashboard_index_path, class: "back-link" do %>
-        <i class="bi bi-arrow-left me-2" w-tid="34"></i> Back to Dashboard
+        <i class="bi bi-arrow-left me-2"></i> Back to Dashboard
       <% end %>
-      <h2 class="mb-4">Portfolio: <%= @portfolio.name %></h2>
+      <h2 class="mb-4"><%= @portfolio.name %></h2>
     </div>
   </div>
   <div class="row mb-4">
@@ -48,41 +48,38 @@
       </div>
     </div>
   </div> %>
-  <div class="row mb-3">
-    <div class="col-12 d-flex justify-content-between align-items-center">
-      <h3>Holdings</h3>
-      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <%# Holdings start %>
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <span>Holdings</span>
+      <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addHoldingsModal">
         <i class="bi bi-plus-circle"></i> Add New Holding
       </button>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>Symbol</th>
-                  <th>Company</th>
-                  <th>Shares</th>
-                  <th>Price</th>
-                  <th>Value</th>
-                  <th>Yield</th>
-                  <th>Sector</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <%= render 'portfolios/holdings' %>
-              </tbody>
-            </table>
-          </div>
-        </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>Company Name</th>
+              <th>Shares</th>
+              <th>Average Cost</th>
+              <th>Current Price</th>
+              <th>Market Value</th>
+              <th>Dividend Yield</th>
+              <th>Annual Income</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="holdings">
+            <%= render 'portfolios/holdings' %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
+  <%# Holdings end %>
   <%# <div class="row mt-4">
     <div class="col-12">
       <div class="card">
@@ -108,6 +105,12 @@
       </div>
     </div>
   </div> %>
+  <!-- Modal -->
+  <%= render 'portfolios/modal' %>
+  <%# <%= turbo_frame_tag "holding", target: '_top' %>
+  <%# card holdings %>
 </div>
-<!-- Modal -->
-<%= render 'portfolios/modal' %>
+<h2>
+  new transaction
+</h2>
+<%= link_to "Add Transaction", new_portfolio_transaction_path(@portfolio) %>

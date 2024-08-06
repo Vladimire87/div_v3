@@ -1,0 +1,32 @@
+<%= form_with(model: [@portfolio, @transaction] ) do |form| %>
+  <%= form.submit %>
+<% end %>
+<%# id: nil,
+ date: nil,
+ shares: nil,
+ price_per_share: nil,
+ user_id: nil,
+ portfolio_id: nil,
+ stock_id: nil,
+ created_at: nil, %>
+<%= form_with(model: [@portfolio, @transaction], local: true) do |form| %>
+  <div class="mb-3">
+    <%= form.label :stock_id, "Stock", class: "form-label" %>
+    <%= form.collection_select :stock_id, @stocks, :id, :name, {}, class: "form-select" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :date, "Date", class: "form-label" %>
+    <%= form.date_field :date, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :shares, "Shares", class: "form-label" %>
+    <%= form.number_field :shares, step: 0.01, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :price_per_share, "Price per Share", class: "form-label" %>
+    <%= form.number_field :price_per_share, step: 0.01, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.submit "Create Transaction", class: "btn btn-primary" %>
+  </div>
+<% end %>

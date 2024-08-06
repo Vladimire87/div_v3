@@ -10,7 +10,7 @@ class PortfoliosController < ApplicationController
 
   def show
     @stocks = Stock.all
-    @positions = @portfolio.positions.includes(:stock)
+    @holdings = @portfolio.holdings.includes(:stock)
   end
 
   def create

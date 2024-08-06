@@ -2,11 +2,12 @@
 
 class Portfolio < ApplicationRecord
   belongs_to :user
-  has_many :positions
-
+  has_many :holdings, dependent: :destroy
+  has_many :transactions, dependent: :destroy
+  has_many :stocks, through: :holdings
   validates :name, presence: true
 
   def total_value
-    positions.joins(:stock).sum('positions.quantity * stocks.current_price')
+    holdings.joins(:stock).sum('holdings.quantity * stocks.current_price')
   end
 end
