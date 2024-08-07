@@ -1,21 +1,24 @@
-<%= form_with(model: [@portfolio, Holding.new]) do |form| %>
+<%= form_with(model: [@portfolio, Transaction.new]) do |form| %>
   <div class="mb-3">
+    <%= form.label :stock_id, "Stock", class: "form-label" %>
     <%= form.collection_select :stock_id, @stocks, :id, :name, {}, class: "form-select" %>
   </div>
   <div class="mb-3">
-    <%= form.label :quantity, "Quantity", class: "form-label" %>
-    <%= form.number_field :quantity, class: "form-control" %>
+    <%= form.label :date, "Date", class: "form-label" %>
+    <%= form.date_field :date, class: "form-control" %>
   </div>
   <div class="mb-3">
-    <%= form.label :purchase_price, "Purchase Price", class: "form-label" %>
-    <%= form.number_field :purchase_price, step: 0.01, class: "form-control" %>
+    <%= form.label :shares, "Shares", class: "form-label" %>
+    <%= form.number_field :shares, step: 0.01, class: "form-control" %>
   </div>
   <div class="mb-3">
-    <%= form.label :purchase_date, "Purchase Date", class: "form-label" %>
-    <%= form.date_field :purchase_date, class: "form-control" %>
+    <%= form.label :price_per_share, "Price per Share", class: "form-label" %>
+    <%= form.number_field :price_per_share, step: 0.01, class: "form-control" %>
+  </div>
+  <div class="mb-3">
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <%= form.submit "Add Holding", class: "btn btn-primary" %>
+    <%= form.submit "Create Transaction", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -9,7 +9,7 @@
     <td><%= number_to_currency(holding.market_value.to_f, precision: 0) %></td>
     <td>0.6%</td>
     <td><%= number_to_currency(150.to_f, precision: 0) %></td>
-    <td>
+    <td class="d-flex justify-content-center">
       <%= link_to portfolio_transaction_path(@portfolio, holding.stock_id) do %>
         <i class="bi bi-eye"></i>
       <% end %>
