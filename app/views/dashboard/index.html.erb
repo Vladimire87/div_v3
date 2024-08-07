@@ -1,10 +1,41 @@
-<h1>
-  Dashboard
-</h1>
-<% @portfolios.each do |portfolio| %>
-  <ul>
-    <li class="nav-link">
-      <%= link_to portfolio.name, portfolio_path(portfolio) %>
-    </li>
-  </ul>
-<% end %>
+<div class="container py-4">
+  <h1 class="mb-4">
+    Your Portfolios
+  </h1>
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Portfolio Name</th>
+              <th>Value</th>
+              <th>Dividend Yield</th>
+              <th>YTD Return</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="portfolios">
+            <% @portfolios.each do |portfolio| %>
+              <%= content_tag :tr, id: dom_id(portfolio) do %>
+                <td><%= portfolio.name %></td>
+                <td><%= number_to_currency(portfolio.total_value.to_f, precision: 0) %></td>
+                <td><%= portfolio.name %></td>
+                <td><%= portfolio.name %></td>
+                <td>
+                  <%= link_to portfolio_path(portfolio), class: "btn btn-primary btn-sm" do %>
+                    View
+                  <% end %>
+                </td>
+                <%# <%= link_to "Edit", edit_portfolio_portfolio_path(@portfolio, portfolio), data: {turbo_frame: "portfolio"},class: "btn btn-sm btn-outline-primary me-1" %>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-4">
+    <%= link_to "Create New Portfolio", new_portfolio_path, class: "btn btn-primary btn-sm" %>
+  </div>
+</div>

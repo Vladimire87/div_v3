@@ -2,9 +2,13 @@
   <%= content_tag :tr, id: dom_id(holding) do %>
     <td><%= holding.stock.symbol %>
     </td>
-    <td><%= holding.stock.name %></td>
-    <td><%= holding.quantity %></td>
-    <td><%= number_to_currency(holding.average_cost) %></td>
+    <td style="width: 18%;">
+      <%= holding.stock.name %>
+    </td>
+    <td>
+      <%= holding.quantity %>
+    </td>
+    <td><%= number_to_currency(150) %></td>
     <td><%= number_to_currency(holding.stock.current_price) %></td>
     <td><%= number_to_currency(holding.market_value.to_f, precision: 0) %></td>
     <td>0.6%</td>
